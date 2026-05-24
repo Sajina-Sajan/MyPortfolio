@@ -66,7 +66,7 @@
     </section>
 
     <section class="education">
-        </section>
+    </section>
 
     <section id="projects" class="projects">
         <h2 class="section-title">My Projects</h2>
@@ -74,49 +74,67 @@
             
             <div class="project-card">
                 <div class="project-img-box">
-                    <img src="images/project1.png" alt="E-Commerce Web App">
+                    <div class="project-gallery-grid grid-6-cols">
+                        <img src="images/hirestack1.png" alt="HireStack System 1">
+                        <img src="images/hirestack2.png" alt="HireStack System 2">
+                        <img src="images/hirestack3.png" alt="HireStack System 3">
+                        <img src="images/hirestack4.png" alt="HireStack System 4">
+                        <img src="images/hr5.png" alt="HireStack System 5">
+                        <img src="images/hr6.png" alt="HireStack System 6">
+                    </div>
                 </div>
                 <div class="project-info">
                     <span class="proj-num">01</span>
-                    <h3>Django E-Commerce Platform</h3>
-                    <p>A full-featured online shopping application featuring user authentication, product catalogs, dynamic search filters, database relational architectures, and a secure checkout flow management system.</p>
-                    <a href="#">View Project &nearr;</a>
+                    <h3>HireStack – Smart Recruitment & Career Portal</h3>
+                    <p>A dynamic full-stack recruitment platform using Python Django, MySQL, Tailwind CSS, JavaScript, HTML, and CSS that streamlines hiring for users, recruiters, and admins through role-based dashboards and secure authentication. Integrated features like real-time job applications, candidate approval workflows, mock test management with score tracking, resume handling, advanced job search, and experience management. Crafted a modern responsive UI with immersive hover interactions and seamless Dark/Light mode switching to deliver a smooth and engaging user experience.</p>
+                    <!-- <a href="#">View Project &nearr;</a> -->
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-img-box">
-                    <img src="images/project2.png" alt="Task Management System">
+                    <div class="project-gallery-grid grid-2-cols">
+                        <img src="images/qs1.png" alt="Quick Support Layout 1">
+                        <img src="images/qs2.png" alt="Quick Support Layout 2">
+                    </div>
                 </div>
                 <div class="project-info">
                     <span class="proj-num">02</span>
-                    <h3>Task Management Dashboard</h3>
-                    <p>An interactive enterprise web app built to streamline daily operations. Includes task delegation trackers, user performance analytics charts, MySQL integrations, and responsive Bootstrap layouts.</p>
-                    <a href="#">View Project &nearr;</a>
+                    <h3>Quick Support Service Platform</h3>
+                    <p>A full-stack web application designed to connect users with instant support services such as drivers, hospital assistance, and emergency help in a fast and budget-friendly way. The platform features secure user authentication, staff verification, service booking, payment management, real-time booking status, and feedback systems. Built with a focus on accessibility, efficient service allocation, and seamless user experience through modern web technologies and scalable system architecture.</p>
+                    <!-- <a href="#">View Project &nearr;</a> -->
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-img-box">
-                    <img src="images/project3.png" alt="Social Media Blog">
+                    <div class="project-gallery-grid grid-4-cols">
+                        <img src="images/pfsp1.png" alt="Financial Support Portal 1">
+                        <img src="images/pfsp2.png" alt="Financial Support Portal 2">
+                        <img src="images/pfsp3.png" alt="Financial Support Portal 3">
+                        <img src="images/pfsp4.png" alt="Financial Support Portal 4">
+                    </div>
                 </div>
                 <div class="project-info">
                     <span class="proj-num">03</span>
-                    <h3>Blogging & Social Web Space</h3>
-                    <p>A creative environment where web content creators publish articles, interface clean UI elements, and manage community interactions seamlessly via interactive robust Python backend frameworks.</p>
-                    <a href="#">View Project &nearr;</a>
+                    <h3>Cancer Patient Financial Support Portal</h3>
+                    <p>A responsive full-stack web platform focused on simplifying financial assistance management for cancer patients. The system streamlines support requests, improves accessibility to treatment resources, and delivers a secure, user-centric experience through modern web technologies. Designed with an emphasis on usability, scalability, and impactful digital solutions to support patients during critical healthcare journeys.</p>
+                    <!-- <a href="#">View Project &nearr;</a> -->
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-img-box">
-                    <img src="images/project4.png" alt="Portfolio Website">
+                    <div class="project-gallery-grid grid-2-cols">
+                        <img src="images/net1.png" alt="Netflix Frontend Mockup 1">
+                        <img src="images/net2.png" alt="Netflix Frontend Mockup 2">
+                    </div>
                 </div>
                 <div class="project-info">
                     <span class="proj-num">04</span>
-                    <h3>Personal Portfolio Website</h3>
-                    <p>A personal portfolio showcasing my professional programming skills, active development projects, and contact hubs packed with sleek transitions and fluid responsive screen adapters.</p>
-                    <a href="#">View Project &nearr;</a>
+                    <h3>Netflix Clone</h3>
+                    <p>Designed and developed a responsive Netflix-inspired landing page using HTML, CSS, and Bootstrap with modern UI styling and interactive hover effects. The project focuses on clean layout design, smooth user experience, responsive components, and visually engaging content sections that replicate the look and feel of a professional streaming platform.</p>
+                    <!-- <a href="#">View Project &nearr;</a> -->
                 </div>
             </div>
 
@@ -138,5 +156,83 @@
         </div>
     </section>
 
+    <div id="portfolioLightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous image">&#10094;</button>
+        <div class="lightbox-content-box">
+            <img id="lightboxImage" src="" alt="Popup view details">
+        </div>
+        <button class="lightbox-btn lightbox-next" aria-label="Next image">&#10095;</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('portfolioLightbox');
+            const lightboxImg = document.getElementById('lightboxImage');
+            const closeBtn = document.querySelector('.lightbox-close');
+            const prevBtn = document.querySelector('.lightbox-prev');
+            const nextBtn = document.querySelector('.lightbox-next');
+            
+            let currentGalleryImages = [];
+            let currentImgIndex = 0;
+
+            // Register all clickable images across different gallery layouts
+            document.querySelectorAll('.project-gallery-grid img').forEach((img) => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function() {
+                    // Scope current view context strictly to the clicked project card container
+                    const parentGrid = this.closest('.project-gallery-grid');
+                    currentGalleryImages = Array.from(parentGrid.querySelectorAll('img'));
+                    currentImgIndex = currentGalleryImages.indexOf(this);
+                    
+                    updateLightboxDisplay();
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Stop standard body timeline scroll
+                });
+            });
+
+            function updateLightboxDisplay() {
+                const targetImg = currentGalleryImages[currentImgIndex];
+                lightboxImg.src = targetImg.src;
+                lightboxImg.alt = targetImg.alt || 'Project Screenshot';
+            }
+
+            function showNextImage() {
+                if (currentGalleryImages.length <= 1) return;
+                currentImgIndex = (currentImgIndex + 1) % currentGalleryImages.length;
+                updateLightboxDisplay();
+            }
+
+            function showPrevImage() {
+                if (currentGalleryImages.length <= 1) return;
+                currentImgIndex = (currentImgIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+                updateLightboxDisplay();
+            }
+
+            nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNextImage(); });
+            prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrevImage(); });
+            closeBtn.addEventListener('click', closeLightboxContainer);
+            
+            // Dismiss if click hits dark backing shadow overlay instead of imagery components
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === this || e.target.classList.contains('lightbox-content-box')) {
+                    closeLightboxContainer();
+                }
+            });
+
+            function closeLightboxContainer() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = ''; // Restore page frame tracking scroll
+            }
+
+            // Keyboard binds
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightboxContainer();
+                if (e.key === 'ArrowRight') showNextImage();
+                if (e.key === 'ArrowLeft') showPrevImage();
+            });
+        });
+    </script>
 </body>
 </html>
