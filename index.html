@@ -170,18 +170,16 @@
             let currentGalleryImages = [];
             let currentImgIndex = 0;
 
-            // Register all clickable images across different gallery layouts
             document.querySelectorAll('.project-gallery-grid img').forEach((img) => {
                 img.style.cursor = 'pointer';
                 img.addEventListener('click', function() {
-                    // Scope current view context strictly to the clicked project card container
                     const parentGrid = this.closest('.project-gallery-grid');
                     currentGalleryImages = Array.from(parentGrid.querySelectorAll('img'));
                     currentImgIndex = currentGalleryImages.indexOf(this);
                     
                     updateLightboxDisplay();
                     lightbox.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Stop standard body timeline scroll
+                    document.body.style.overflow = 'hidden';
                 });
             });
 
@@ -207,7 +205,6 @@
             prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrevImage(); });
             closeBtn.addEventListener('click', closeLightboxContainer);
             
-            // Dismiss if click hits dark backing shadow overlay instead of imagery components
             lightbox.addEventListener('click', function(e) {
                 if (e.target === this || e.target.classList.contains('lightbox-content-box')) {
                     closeLightboxContainer();
@@ -216,10 +213,9 @@
 
             function closeLightboxContainer() {
                 lightbox.classList.remove('active');
-                document.body.style.overflow = ''; // Restore page frame tracking scroll
+                document.body.style.overflow = '';
             }
 
-            // Keyboard binds
             document.addEventListener('keydown', (e) => {
                 if (!lightbox.classList.contains('active')) return;
                 if (e.key === 'Escape') closeLightboxContainer();

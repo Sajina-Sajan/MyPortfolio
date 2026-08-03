@@ -103,19 +103,20 @@ body {
     margin-bottom: 25px;
 }
 
+/* Compact Rectangular Avatar Frame */
 .hero-avatar img { 
-    width: 170px; 
-    height: 170px;
+    width: 140px; 
+    height: 165px;
     object-fit: cover;
-    border-radius: 50%; 
-    border: 3px solid var(--red);
-    box-shadow: 0 0 25px var(--red-glow);
+    border-radius: 16px; 
+    border: 2px solid var(--red);
+    box-shadow: 0 0 20px var(--red-glow);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .hero-avatar img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 35px rgba(255, 46, 67, 0.45);
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(255, 46, 67, 0.45);
 }
 
 .hero-content { 
