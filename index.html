@@ -10,7 +10,7 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">PORTFOLIO</div>
+        <div class="logo">PORTFOLIO<span>.</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -21,32 +21,23 @@
     </nav>
 
     <section id="home" class="hero">
+        <div class="hero-avatar">
+            <img src="Portfolio\images\sajina sajan.jpg" alt="Sajina Avatar">
+        </div>
         <div class="hero-content">
             <h1>Hello, I am <span>Sajina</span></h1>
             <h2 class="hero-title">Creative Fullstack Developer</h2>
             <p>I build modern, responsive, and user-focused web applications using Python and frontend technologies. Focused on clean design, performance, and continuous learning to create impactful digital experiences.</p>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/sajinasajan" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Sajina-Sajan" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/saju__veaaa" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/sajinasajan" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Sajina-Sajan" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/saju__veaaa" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="images/saju1.jpg" alt="Avatar" 
-                 style="transition: transform 0.3s ease, box-shadow 0.3s ease;" 
-                 onmouseenter="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.2)';" 
-                 onmouseleave="this.style.transform='scale(1)'; this.style.boxShadow='none';">
         </div>
     </section>
 
     <section id="about" class="about">
-        <div class="about-image">
-            <img src="images/saju2.jpg" alt="About Me" 
-                 style="transition: transform 0.3s ease, box-shadow 0.3s ease;" 
-                 onmouseenter="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.2)';" 
-                 onmouseleave="this.style.transform='scale(1)'; this.style.boxShadow='none';">
-        </div>
-        <div class="about-content">
+        <div class="about-card">
             <h2 class="section-label">About Me</h2>
             <p>I am a Computer Science graduate and aspiring <strong>Full Stack Developer</strong> focused on building modern, responsive, and scalable web applications.</p> 
             <p>Skilled in Python, Django, MySQL, HTML, CSS, JavaScript, and Bootstrap, I enjoy creating clean user experiences and efficient backend solutions with strong UI/UX design.</p> 
@@ -108,7 +99,7 @@
                     <span class="proj-num">02</span>
                     <h3>Quick Support Service Platform</h3>
                     <p>A full-stack web application designed to connect users with instant support services such as drivers, hospital assistance, and emergency help in a fast and budget-friendly way. The platform features secure user authentication, staff verification, service booking, payment management, real-time booking status, and feedback systems. Built with a focus on accessibility, efficient service allocation, and seamless user experience through modern web technologies and scalable system architecture.</p>
-                    </div>
+                </div>
             </div>
 
             <div class="project-card">
@@ -124,7 +115,7 @@
                     <span class="proj-num">03</span>
                     <h3>Cancer Patient Financial Support Portal</h3>
                     <p>A responsive full-stack web platform focused on simplifying financial assistance management for cancer patients. The system streamlines support requests, improves accessibility to treatment resources, and delivers a secure, user-centric experience through modern web technologies. Designed with an emphasis on usability, scalability, and impactful digital solutions to support patients during critical healthcare journeys.</p>
-                    </div>
+                </div>
             </div>
 
             <div class="project-card">
@@ -138,7 +129,7 @@
                     <span class="proj-num">04</span>
                     <h3>Netflix Clone</h3>
                     <p>Designed and developed a responsive Netflix-inspired landing page using HTML, CSS, and Bootstrap with modern UI styling and interactive hover effects. The project focuses on clean layout design, smooth user experience, responsive components, and visually engaging content sections that replicate the look and feel of a professional streaming platform.</p>
-                    </div>
+                </div>
             </div>
 
         </div>
@@ -149,7 +140,7 @@
             <h2 class="section-title">Get In Touch</h2>
             <p class="contact-desc">For collaborations or enquiries, feel free to contact me via email or LinkedIn.</p>
             <div class="contact-links">
-                <a href="#" class="contact-btn">
+                <a href="mailto:sajina.sajan08@gmail.com" class="contact-btn">
                     <i class="fas fa-envelope"></i> sajina.sajan08@gmail.com
                 </a>
                 <div class="contact-socials">
